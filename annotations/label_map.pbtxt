@@ -1,0 +1,40 @@
+item {
+  name: "clay"
+  id: 1
+}
+item {
+  name: "tin"
+  id: 2
+}
+item {
+  name: "copper"
+  id: 3
+}
+item {
+  name: "iron"
+  id: 4
+}
+item {
+  name: "silver"
+  id: 5
+}
+item {
+  name: "coal"
+  id: 6
+}
+item {
+  name: "gold"
+  id: 7
+}
+item {
+  name: "mithril"
+  id: 8
+}
+item {
+  name: "adamant"
+  id: 9
+}
+item {
+  name: "rune"
+  id: 10
+}

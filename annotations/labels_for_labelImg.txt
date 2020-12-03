@@ -1,0 +1,10 @@
+clay
+tin
+copper
+iron
+silver
+coal
+gold
+mithril
+adamant
+rune
