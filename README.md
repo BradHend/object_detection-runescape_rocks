@@ -1,5 +1,5 @@
 # object_detection-runescape_rocks
-Learning about Object Detection and Machine Learning using Runescape as an event generator
+Learning about [TensorFlow's Object Detection API](https://github.com/tensorflow/models/tree/master/research/object_detection) using Runescape as an event generator
 
 
 # Motivation: 
