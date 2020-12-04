@@ -23,9 +23,15 @@ python generate_tfrecord.py -x ./images/train -l ./annotations/label_map.pbtxt -
 python generate_tfrecord.py -x ./images/test -l ./annotations/label_map.pbtxt -o ./annotations/test.record
 ```
 
-### Training the Model:
+# Training the Model:
+### pipeline.config
 Select model pipeline.config file from Tensorflow [Model Zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md), for my testing I selected the 640x640 ssd_resnet50_v1_fpn and faster_rcnn_resnet50_v1 (.config's in /models directory). For this dataset and models I get Total Loss ~=1.4 @5,000 steps, and both models train at ~0.8 step/sec on a Nvidia GeForce GTX 1060 6GB CUDA enabled graphics card.
 
 Ensure that any pipeline.config is updated to have the correct: num_classes (10 for this dataset), num_steps, fine_tune_checkpoint (or comment out line), num_steps, and batch_size (depends on computational resources). 
+### model_main_tf2 utility
+model_main_tf2.py [source](https://github.com/tensorflow/models/blob/master/research/object_detection/model_main_tf2.py) is a Tensorflow-provided (committed here for convenience/completness) function for training a model, given a correspondig pipeline.config file.
+```
+python model_main_tf2.py --model_dir=models/ssd_resnet50_v1_fpn --pipeline_config_path=models/ssd_resnet50_v1_fpn/pipeline.config
 
+```
 
