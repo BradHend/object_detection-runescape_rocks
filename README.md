@@ -29,7 +29,7 @@ Select model pipeline.config file from Tensorflow [Model Zoo](https://github.com
 
 Ensure that any pipeline.config is updated to have the correct: num_classes (10 for this dataset), num_steps, fine_tune_checkpoint (or comment out line), num_steps, and batch_size (depends on computational resources). 
 ### model_main_tf2 utility
-model_main_tf2.py [source]https://github.com/tensorflow/models/blob/master/research/object_detection/model_main_tf2.py is a Tensorflow-provided (committed here for convenience/completness) function for training a model, given a correspondig pipeline.config file.
+model_main_tf2.py [source](https://github.com/tensorflow/models/blob/master/research/object_detection/model_main_tf2.py) is a Tensorflow-provided (committed here for convenience/completness) function for training a model, given a correspondig pipeline.config file.
 ```
 python model_main_tf2.py --model_dir=models/ssd_resnet50_v1_fpn --pipeline_config_path=models/ssd_resnet50_v1_fpn/pipeline.config
 
