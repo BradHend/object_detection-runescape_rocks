@@ -7,6 +7,8 @@ This repo. is mostly a reference for future me, and is offered As-Is with no Gua
 
 *real-time performance is much faster than this .gif
 
+Dependencies: numpy, open-cv (cv2), glob, PIL, tensorflow, object_detection
+
 Disclaimer:
   1. The dataset is not balanced. Rune/Adamant/Mithril (being more rare in-game) may be "under-represented" in this dataset.
   2. Due to the simplistic, low-clutter, nature of OSRS the models may quickly over-fit
