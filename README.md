@@ -3,8 +3,13 @@ Learning about [TensorFlow's Object Detection API](https://github.com/tensorflow
 
 This repo. is mostly a reference for future me, and is offered As-Is with no Guarantees or Warranties. Pull requests welcome. 
 ![Object Detection Demo](demo/demo.gif)
+*real-time performance is much faster than this .gif
 
-# Motivation: 
+Disclaimer:
+  1. The dataset is not balanced. Rune/Adamant/Mithril (being more rare in-game) may be "under-represented" in this dataset.
+  2. Due to the simplistic, low-clutter, nature of OSRS the models may quickly over-fit
+  
+# Motivation
 The MMORPG Old-School Runescape was selected for the basis of experimentation as it provides a low-clutter, highly repeatable, envrionment containing a diverse set of objects that can be used to generate traceable training datasets and perform real-time Model test & evaluation.
 
 # Dataset Preparation
@@ -24,7 +29,7 @@ python generate_tfrecord.py -x ./images/train -l ./annotations/label_map.pbtxt -
 python generate_tfrecord.py -x ./images/test -l ./annotations/label_map.pbtxt -o ./annotations/test.record
 ```
 
-# Training the Model:
+# Training the Model
 ### pipeline.config
 Select model pipeline.config file from Tensorflow [Model Zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md), for my testing I selected the 640x640 ssd_resnet50_v1_fpn and faster_rcnn_resnet50_v1 (.config's in /models directory). For this dataset and models I get Total Loss ~=1.4 @5,000 steps, and both models train at ~0.8 step/sec on a Nvidia GeForce GTX 1060 6GB CUDA enabled graphics card.
 
@@ -36,3 +41,13 @@ python model_main_tf2.py --model_dir=models/ssd_resnet50_v1_fpn --pipeline_confi
 
 ```
 
+# Testing the Trained Model(s)
+Sample scripts are attached for testing of trained models. Both testing scripts need to have "VARIABLES TO BE CONFIGURED" with your own parameters.
+
+### test_trained_model.py
+loads a specified model and evaluates the model against a random selection of images from the /images folder. Press "q" to move to the next image.
+
+### test_trained_model_realtime.py
+loads specified model and evaluates images grabbed in real-time from a specified screen region. Note, cv2 and PIL are used to grab screenshots to minimize dependencies, there much faster ways to grab screenshots (mss, win32, etc.).
+
+On my CUDA-enabled GTX 1050Ti (laptop) I get ~1.2 FPS (using win32 for screenshots I get ~3.5 FPS)
