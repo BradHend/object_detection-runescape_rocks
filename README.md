@@ -2,7 +2,9 @@
 Learning about [TensorFlow's Object Detection API](https://github.com/tensorflow/models/tree/master/research/object_detection) using Runescape as a controlable testing environment. The data pre-processing, model training, and folder structure is based on [TensorFlow's Object Detection](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/) tutorial.
 
 This repo. is mostly a reference for future me, and is offered As-Is with no Guarantees or Warranties. Pull requests welcome. 
+
 ![Object Detection Demo](demo/demo.gif)
+
 *real-time performance is much faster than this .gif
 
 Disclaimer:
@@ -42,7 +44,7 @@ python model_main_tf2.py --model_dir=models/ssd_resnet50_v1_fpn --pipeline_confi
 ```
 
 # Testing the Trained Model(s)
-Sample scripts are attached for testing of trained models. Both testing scripts need to have "VARIABLES TO BE CONFIGURED" with your own parameters.
+Sample scripts are attached for testing of trained models. Both testing scripts need to have "VARIABLES TO BE CONFIGURED" updated with your own parameters.
 
 ### test_trained_model.py
 loads a specified model and evaluates the model against a random selection of images from the /images folder. Press "q" to move to the next image.
