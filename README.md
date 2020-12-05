@@ -2,6 +2,7 @@
 Learning about [TensorFlow's Object Detection API](https://github.com/tensorflow/models/tree/master/research/object_detection) using Runescape as a controlable testing environment. The data pre-processing, model training, and folder structure is based on [TensorFlow's Object Detection](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/) tutorial.
 
 This repo. is mostly a reference for future me, and is offered As-Is with no Guarantees or Warranties. Pull requests welcome. 
+![Object Detection Demo](demo/demo.gif)
 
 # Motivation: 
 The MMORPG Old-School Runescape was selected for the basis of experimentation as it provides a low-clutter, highly repeatable, envrionment containing a diverse set of objects that can be used to generate traceable training datasets and perform real-time Model test & evaluation.
